@@ -1,5 +1,7 @@
 import express from 'express';
 import pg from 'pg';
+import dotenv from 'dotenv';
+dotenv.config();
 
 const app = express();
 
@@ -9,13 +11,15 @@ app.listen(3001, () => {
 	console.log('The server is running!');
   });
 
-const client = new Client({
-	user: 'postgres',
-	password: '126pOst1258',
-	database: 'postgres',
-	host: 'localhost',
-	port: 5432
-});
+const client = new Client();
+
+/*const client = new Client({
+	user: process.env.PG_USER,
+	password: process.env.PG_PW,
+	database: process.env.PG_DB,
+	host: process.env.PG_HOST,
+	port: process.env.PG_PORT
+});*/
 
 connect();
 
