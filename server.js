@@ -15,7 +15,7 @@ app.listen(3001, () => {
 });
 
 // defining endpoints
-app.get('/genres', (req, res) => {
+app.post('/genres', (req, res) => {
 	res.send('This is genre page')
 });
 
