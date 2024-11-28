@@ -1,15 +1,20 @@
 import express from 'express';
+import multer from 'multer';
 
-var app = express();
+const app = express();
 
-//urlencoded middleware to handle body parameters
-app.use(express.urlencoded({extended: true}));
+// middleware to handle body parameters
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
+const upload = multer({ dest: 'uploads/' });
+
+// start the server
 app.listen(3001, () => {
-	console.log('The server is running!')
+  console.log('The server is running!');
 });
 
-// defining an endpoint
+// defining endpoints
 app.get('/genres', (req, res) => {
 	res.send('This is genre page')
 });
@@ -18,12 +23,9 @@ app.get('/movies', (req, res) => {
 
 });
 
-app.post('/user', (req, res) => {
-
-		let user = req.body;
-		console.log(user)
-
-		res.send();
+app.post('/users', (req, res) => {
+	console.log(req.body.fname);
+	console.log(req.body.lname);
 });
 
 app.get('/movies/:id', (req, res) => {
