@@ -37,4 +37,23 @@ CREATE TABLE Favorite(
 	FOREIGN KEY (movie_id) REFERENCES Movie(id)
 );
 
-INSERT INTO Genre (genreName, descr) VALUES ('Horror', 'Scary!');
+INSERT INTO Genre (genreName, descr) VALUES 
+('Drama', 'Dramatic movies'), 
+('Comedy', 'Funny movies'), 
+('Sci-Fi', 'Science Fiction movies'), 
+('Fantasy', 'Fantasy adventures'), 
+('Action', 'Action movies'), 
+('Thriller', 'Suspenseful movies');
+
+INSERT INTO Movie (name, year, genre_id) VALUES 
+('Inception', 2010, (SELECT id FROM Genre WHERE genreName = 'Action')),
+('The Terminator', 1984, (SELECT id FROM Genre WHERE genreName = 'Action')),
+('Tropic Thunder', 2008, (SELECT id FROM Genre WHERE genreName = 'Comedy')),
+('Borat', 2006, (SELECT id FROM Genre WHERE genreName = 'Comedy')),
+('Interstellar', 2014, (SELECT id FROM Genre WHERE genreName = 'Drama')),
+('Joker', 2019, (SELECT id FROM Genre WHERE genreName = 'Drama'));
+
+INSERT INTO Users (username, name, password, yearOfBirth) VALUES
+('reimarii', 'Reima Riihimäki', 'qwerty123', 1986),
+('lizzy', 'Lisa Simpson', 'abcdef', 1991),
+('boss', 'Ben Bossy', 'salasana', 1981);
