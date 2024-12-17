@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"Pekka Puupää\",\r\n    \"username\":\"pekkapuupää\",\r\n    \"password\":\"12345\",\r\n    \"yearOfBirth\":1970\r\n}",
+							"raw": "{\r\n    \"name\":\"Gary\",\r\n    \"username\":\"kari\",\r\n    \"password\":\"777777\",\r\n    \"yearOfBirth\":1970\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -43,7 +43,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"Pekka\",\r\n    \"username\":\"pekkapuupää\",\r\n    \"password\":\"12346\",\r\n    \"yearOfBirth\":1971\r\n}",
+							"raw": "{\r\n    \"name\":\"Paavo Pesusieni\",\r\n    \"username\":\"paavo\",\r\n    \"password\":\"12346\",\r\n    \"yearOfBirth\":1970\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -70,7 +70,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"Pekka\",\r\n    \"username\":\"pekkapuupää\",\r\n    \"yearOfBirth\":1971\r\n}",
+							"raw": "{\r\n    \"name\":\"Paavo Pesusieni\",\r\n    \"username\":\"paavo\",\r\n    \"yearOfBirth\": 1970\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -102,7 +102,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"Drama\",\r\n    \"descr\":\"dramatic\"\r\n}",
+							"raw": "{\r\n    \"name\":\"Documentary\",\r\n    \"description\":\"real\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -129,7 +129,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"Drama\",\r\n    \"descr\":\"dramatic\"\r\n}",
+							"raw": "{\r\n    \"name\":\"Horror\",\r\n    \"description\":\"Scary\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -161,7 +161,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"The Ring\",\r\n    \"year\":2002,\r\n    \"genre\":\"Horror\"\r\n}",
+							"raw": "{\r\n    \"name\":\"Coco\",\r\n    \"year\":2017,\r\n    \"genre\":\"Animation\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -242,7 +242,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"The Ring\",\r\n    \"year\":2002,\r\n    \"genre\":\"Comedy\"\r\n}",
+							"raw": "{\r\n    \"name\":\"The Ring\",\r\n    \"year\":2002,\r\n    \"genre\":\"Romance\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -261,23 +261,15 @@
 						}
 					},
 					"response": []
-				}
-			]
-		},
-		{
-			"name": "/users/:username",
-			"item": [
+				},
 				{
-					"name": "Requesting username",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
+					"name": "Delete movie",
 					"request": {
-						"method": "GET",
+						"method": "DELETE",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \r\n}",
+							"raw": "",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -285,14 +277,44 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3001/users/pekkapuupää",
+							"raw": "http://localhost:3001/movies/9",
+							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3001",
 							"path": [
-								"users",
-								"pekkapuupää"
+								"movies",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Error: Movie not found",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/movies/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"movies",
+								"8"
 							]
 						}
 					},
@@ -321,14 +343,14 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3001/movies/1",
+							"raw": "localhost:3001/movies/7",
 							"host": [
 								"localhost"
 							],
 							"port": "3001",
 							"path": [
 								"movies",
-								"1"
+								"7"
 							]
 						}
 					},
@@ -352,14 +374,14 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3001/movies/2",
+							"raw": "localhost:3001/movies/8",
 							"host": [
 								"localhost"
 							],
 							"port": "3001",
 							"path": [
 								"movies",
-								"2"
+								"8"
 							]
 						}
 					},
@@ -388,8 +410,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3001/movies/search?keyword=Ring",
-							"protocol": "http",
+							"raw": "localhost:3001/movies/search?keyword=Ring",
 							"host": [
 								"localhost"
 							],
@@ -420,7 +441,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"username\": \"pekkapuupää\",\r\n  \"stars\": 5,\r\n  \"text\": \"Cool movie!\"\r\n}\r\n",
+							"raw": "{\r\n  \"username\": \"paavo\",\r\n  \"stars\": 5,\r\n  \"text\": \"Cool movie!\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -428,8 +449,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3001/movies/1/reviews",
-							"protocol": "http",
+							"raw": "localhost:3001/movies/1/reviews",
 							"host": [
 								"localhost"
 							],
@@ -450,7 +470,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"username\": \"pekkapuupää\",\r\n  \"stars\": 5\r\n}\r\n",
+							"raw": "{\r\n  \"username\": \"paavo\",\r\n  \"stars\": 5\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -485,7 +505,37 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"favorites\": [1]\r\n}\r\n",
+							"raw": "{\r\n  \"movie_id\": 4\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/users/paavo/favorites",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"users",
+								"paavo",
+								"favorites"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Error: This movie is already in the user's favorites",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"movie_id\": 1\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"

@@ -46,12 +46,12 @@ INSERT INTO Genre (genreName, descr) VALUES
 ('Thriller', 'Suspenseful movies');
 
 INSERT INTO Movie (name, year, genre_id) VALUES 
-('Inception', 2010, (SELECT id FROM Genre WHERE genreName = 'Action')),
-('The Terminator', 1984, (SELECT id FROM Genre WHERE genreName = 'Action')),
-('Tropic Thunder', 2008, (SELECT id FROM Genre WHERE genreName = 'Comedy')),
-('Borat', 2006, (SELECT id FROM Genre WHERE genreName = 'Comedy')),
-('Interstellar', 2014, (SELECT id FROM Genre WHERE genreName = 'Drama')),
-('Joker', 2019, (SELECT id FROM Genre WHERE genreName = 'Drama'));
+('Inception', 2010, 5),
+('The Terminator', 1984, 5),
+('Tropic Thunder', 2008, 2),
+('Borat', 2006, 2),
+('Interstellar', 2014, 1),
+('Joker', 2019, 1);
 
 INSERT INTO Users (username, name, password, yearOfBirth) VALUES
 ('reimarii', 'Reima Riihimäki', 'qwerty123', 1986),
